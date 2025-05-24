@@ -14,14 +14,14 @@
             <h1>ABC Fitness</h1>
         </div>
         <nav class='header'>
-            <a href="">Homepage</a>
-            <a href="">About Us</a>
-            <a href="">Gallery</a>
-            <a href="">Events</a>
+            <a href="#" onclick="showSection('home')">Homepage</a>
+            <a href="#" onclick="showSection('about')">About Us</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
+            <a href="#" onclick="showSection('events')">Events</a>
         </nav>
     </header>
 
-    <div id='homepage' class='homepage'>
+    <div id='home' class='page active'>
         <h1>Homepage</h1>
         <div class="hero-image">
             <div class="hero-text">
@@ -34,16 +34,16 @@
         </div>
         <div class='testimonials'>
             <div class="testimony">
-                <p>Testimony 1</p>
+                <p>"Best workout of my life."</p>
             </div>
 
             <div class="testimony">
-                <p>Testimony 2</p>
+                <p>"Incredible Gym and Trainers."</p>
 
             </div>
 
             <div class="testimony">
-                <p>Testimony 3</p>
+                <p>"I won't workout anywhere else."</p>
 
             </div>
         </div>
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <div id='about' id='about'>
+    <div id='about' class='page'>
         <h1>About Us</h1>
         <div class='services'>
             <div class='list'>
@@ -164,6 +164,7 @@
         </div>
 
         <div class='feedback'>
+            <h2>Feedback Form</h2>
             <form action="#" method='post' id='feedback'>
                 <label for="fname">First Name:</label>
                 <input type="text" id='fname' name='fname' required>
@@ -192,40 +193,48 @@
         </div>
     </div>
 
-    <div id="events">
+    <div id="events" class='page'>
         <h2>Events</h2>
     
         <section class="event-block">
-            <h3>Kickboxing Tournament</h3>
             <div class="event-content">
+                <h3>Kickboxing Tournament</h3>
                 <div class="event-image">
                     <img src="assets/Client2_GroupKickboxing.png" alt="">
                 </div>
+            </div>
+            <div class='event-description'>
                 <p>Once a month, winner gets a free punching bag</p>
             </div>
         </section>
     
         <section class="event-block">
-            <h3>Hot Yoga</h3>
+            <div class='event-description'>
+                <p>Experience Yoga at 100 degrees</p>
+            </div>
             <div class="event-content">
+                <h3>Hot Yoga</h3>
                 <div class="event-image">
                     <img src="assets/Client2_GroupYoga.png" alt="">
                 </div>
-                <p>Yoga in the sauna, get ready to sweat</p>
             </div>
+
+
         </section>
     
         <section class="event-block">
-            <h3>Pilates After Dark</h3>
             <div class="event-content">
+                <h3>Pilates After Dark</h3>
                 <div class="event-image">
                     <img src="assets/Client2_GroupPilates.png" alt="">
                 </div>
-                <p>The gym stays open late for this special event</p>
+            </div>
+            <div class='event-description'>
+                <p>Gym is open late for some extra intense sessions</p>
             </div>
         </section>
     
-        <section class="event-block">
+        <section class="slideshow">
             <h3>Events At the Gym</h3>
             <!-- Slideshow container -->
             <div class="slideshow-container">
@@ -253,30 +262,115 @@
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <br>
-            
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-                    </section>
-                </div>
+        </section>
+    </div>
     
-    <div id="gallery-page">
+    <div id="gallery" class='page'>
         <h2>Gallery</h2>
-    
-        <div class="product-grid">
-            <!-- Repeat this block for each product -->
-            <div class="product-card">
-                <div class="product-image">Product Image</div>
-                <p class="product-name">Name</p>
-                <button class="cart-icon">🛒</button>
-                <p class="product-description">Description</p>
+        <div class='group'>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_TeeShirt.png" alt="T-shirt with gym logo">
+                    </div>
+                    <p class="product-name">T-shirt</p>
+                    <p class="product-description">Organic cotton, lightweight, breathable</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
             </div>
-            <!-- Repeat 8 more times based on the wireframe -->
+    
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_YogaMat.png" alt="Yoga Mat with gym logo">
+                    </div>
+                    <p class="product-name">Yoga Matt</p>
+                    <p class="product-description">Recycled plastic, grippy, sustainably made</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+    
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_WaterBottle.png" alt="Water Bottle with gym logo">
+                    </div>
+                    <p class="product-name">Water Bottle</p>
+                    <p class="product-description">Metal, Made in Australia, Plastic free</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
         </div>
+        <div class='group'>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_TeeShirt.png" alt="T-shirt with gym logo">
+                    </div>
+                    <p class="product-name">T-shirt</p>
+                    <p class="product-description">Organic cotton, lightweight, breathable</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+    
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_YogaMat.png" alt="Yoga Mat with gym logo">
+                    </div>
+                    <p class="product-name">Yoga Matt</p>
+                    <p class="product-description">Recycled plastic, grippy, sustainably made</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+    
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_WaterBottle.png" alt="Water Bottle with gym logo">
+                    </div>
+                    <p class="product-name">Water Bottle</p>
+                    <p class="product-description">Metal, Made in Australia, Plastic free</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+        <div class='group'>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_TeeShirt.png" alt="T-shirt with gym logo">
+                    </div>
+                    <p class="product-name">T-shirt</p>
+                    <p class="product-description">Organic cotton, lightweight, breathable</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+    
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_YogaMat.png" alt="Yoga Mat with gym logo">
+                    </div>
+                    <p class="product-name">Yoga Matt</p>
+                    <p class="product-description">Recycled plastic, grippy, sustainably made</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+    
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/Client2_WaterBottle.png" alt="Water Bottle with gym logo">
+                    </div>
+                    <p class="product-name">Water Bottle</p>
+                    <p class="product-description">Metal, Made in Australia, Plastic free</p>
+                    <button class="cart-icon">Add to Cart 🛒</button>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     
     
@@ -289,13 +383,13 @@
                 <p>Phone: xxx-xxx-xxx</p>
                 <p>Email: fakeEmail@email.com</p>
                 <div>
-                    <a href="">
+                    <a href="#">
                         <img src="assets/instagram.png" alt="Instagram link to ABC Fitness page" class='socials'>
                     </a>
-                    <a href="">
+                    <a href="#">
                         <img src="assets/social-media.png" alt="Facebook link to ABC Fitness page" class='socials'>
                     </a>
-                    <a href="">
+                    <a href="#">
                         <img src="assets/twitter.png" alt="Twitter link to ABC Fitness page" class='socials'>
                     </a>
 
@@ -313,10 +407,10 @@
             </form>
 
             <nav class='footer'>
-                <a href="">Homepage</a>
-                <a href="">About Us</a>
-                <a href="">Gallery</a>
-                <a href="">Events</a>
+                <a href="#" onclick="showSection('home')">Homepage</a>
+                <a href="#" onclick="showSection('about')">About Us</a>
+                <a href="#" onclick="showSection('gallery')">Gallery</a>
+                <a href="#" onclick="showSection('events')">Events</a>
             </nav>
         </div>
     </footer>

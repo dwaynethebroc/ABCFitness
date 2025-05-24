@@ -2,20 +2,18 @@ body, html {
     height: 100%;
 }
 
-div {
-  border: 1px solid black;
-}
 
 header {
   display: flex;
   justify-content: center;
-
+  padding: 10px;
 }
 
 footer {
   display: flex;
   width: 100vw;
   justify-content: center;
+  padding: 10px;
 }
 
 nav.header {
@@ -30,6 +28,24 @@ nav.footer {
   display: flex;
   gap: 15px;
   margin-top: auto;
+}
+
+.mission {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+
+.testimony {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+  font-style: italic;
+  font-size: 30px;
 }
 
 #brandLogo {
@@ -93,17 +109,24 @@ nav.footer {
 .shopPerks {
   display: flex;
   justify-content: center;
+  
 }
 
 .shopAction {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
 }
 
 .perks {
   font-size: 20px;
   padding: 10px;
+  border: 1px solid black;
+}
+
+.schedule {
+  border: 1px solid black;
 }
 
 #goToShop{
@@ -123,6 +146,22 @@ nav.footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.group div{
+  border: 1px solid black;
+}
+
+p.product-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+p.product-description {
+  font-size: 12px;
+  font-weight: 200;
 }
 
 .promo {
@@ -136,15 +175,6 @@ nav.footer {
 .category {
   width: 25%;
   font-size: 20px;
-}
-
-#about {
-  display: flex;
-  flex-direction: column;
-}
-
-#about h1 {
-  text-align: center;
 }
 
 .services {
@@ -169,17 +199,28 @@ nav.footer {
 
 .time {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   width: 200px;
+  padding: 10px;
+
 }
 
-.feedback form{
+#feedback{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
+  border: 1px solid black;
+  max-width: 50vw;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 img.socials {
@@ -205,9 +246,19 @@ img.socials {
 
 .event-block {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 10px;
+}
+
+.slideshow {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px
 }
 
 
@@ -215,9 +266,7 @@ img.socials {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+  height: 300px;
 }
 
 /* Hide the images by default */
@@ -254,10 +303,10 @@ img.socials {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: black;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   bottom: 8px;
   width: 100%;
   text-align: center;
@@ -268,7 +317,7 @@ img.socials {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   top: 0;
 }
 
@@ -284,15 +333,30 @@ img.socials {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
-}
-
 /* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
+#feedback input {
+  width: 200px;
+}
+
+#feedback label {
+  align-items: left;
+  justify-content: left;
+}
+
+.page {
+  display: none;
+}
+
+.active {
+  display: block;
+  text-align: center;
+}
+
 
 @keyframes fade {
   from {opacity: .4}
