@@ -241,19 +241,19 @@
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
+
                 <img src="assets/Client2_GroupKickboxing.png" style="width:100%">
                 <div class="text">Kickboxing</div>
                 </div>
             
                 <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
+
                 <img src="assets/Client2_GroupPilates.png" style="width:100%">
                 <div class="text">Pilates</div>
                 </div>
             
                 <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+
                 <img src="assets/Client2_GroupYoga.png" style="width:100%">
                 <div class="text">Yoga</div>
                 </div>
@@ -267,6 +267,22 @@
     
     <div id="gallery" class='page'>
         <h2>Gallery</h2>
+        <div class='pop-up' id='pop-up'>
+            <div class='modal-title'>
+                <p>Your Order:</p>
+                <span id="close">&times;</span>
+            </div>
+
+            <ul id='cart'>
+
+            </ul>
+            <div>
+                <button id='clearCart'>Clear Cart</button>
+                <button id='Process order'>Process Order</button>
+            </div>
+           
+        </div>
+        <button id='viewCart'>View Cart</button>
         <div class='group'>
             <div class="product-grid">
                 <div class="product-card">
@@ -275,7 +291,7 @@
                     </div>
                     <p class="product-name">T-shirt</p>
                     <p class="product-description">Organic cotton, lightweight, breathable</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('T-shirt')">Add to Cart 🛒</button>
                 </div>
             </div>
     
@@ -286,7 +302,7 @@
                     </div>
                     <p class="product-name">Yoga Matt</p>
                     <p class="product-description">Recycled plastic, grippy, sustainably made</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('Yoga Matt')">Add to Cart 🛒</button>
                 </div>
             </div>
     
@@ -297,7 +313,7 @@
                     </div>
                     <p class="product-name">Water Bottle</p>
                     <p class="product-description">Metal, Made in Australia, Plastic free</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('Water Bottle')">Add to Cart 🛒</button>
                 </div>
             </div>
         </div>
@@ -309,7 +325,7 @@
                     </div>
                     <p class="product-name">T-shirt</p>
                     <p class="product-description">Organic cotton, lightweight, breathable</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('T-shirt')">Add to Cart 🛒</button>
                 </div>
             </div>
     
@@ -320,7 +336,7 @@
                     </div>
                     <p class="product-name">Yoga Matt</p>
                     <p class="product-description">Recycled plastic, grippy, sustainably made</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('Yoga Matt')">Add to Cart 🛒</button>
                 </div>
             </div>
     
@@ -331,7 +347,7 @@
                     </div>
                     <p class="product-name">Water Bottle</p>
                     <p class="product-description">Metal, Made in Australia, Plastic free</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('Water Bottle')">Add to Cart 🛒</button>
                 </div>
             </div>
         </div>
@@ -343,7 +359,7 @@
                     </div>
                     <p class="product-name">T-shirt</p>
                     <p class="product-description">Organic cotton, lightweight, breathable</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('T-shirt')">Add to Cart 🛒</button>
                 </div>
             </div>
     
@@ -354,7 +370,7 @@
                     </div>
                     <p class="product-name">Yoga Matt</p>
                     <p class="product-description">Recycled plastic, grippy, sustainably made</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('Yoga Matt')">Add to Cart 🛒</button>
                 </div>
             </div>
     
@@ -365,10 +381,11 @@
                     </div>
                     <p class="product-name">Water Bottle</p>
                     <p class="product-description">Metal, Made in Australia, Plastic free</p>
-                    <button class="cart-icon">Add to Cart 🛒</button>
+                    <button class="cart-icon" onclick="addToCart('Water Bottle')">Add to Cart 🛒</button>
                 </div>
             </div>
         </div>
+
 
 
     </div>

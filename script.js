@@ -1,4 +1,5 @@
 let slideIndex = 0;
+let cart = [];
 
 function showSlides() {
   let i;
@@ -41,7 +42,69 @@ function showSection(section) {
   activePage.classList.add("active"); // add active to the selected page
 }
 
+function addToCart(item) {
+  cart.push(item);
+  console.log(cart);
+
+  alert(
+    `'${item}' has been added to your cart! View the cart at the top of the page to submit order`
+  );
+}
+
+function closeCart() {
+  const popUpWindow = document.getElementById("pop-up");
+  popUpWindow.classList.add("pop-up");
+  popUpWindow.classList.remove("modal");
+}
+
+function viewCart() {
+  const popUpWindow = document.getElementById("pop-up");
+  popUpWindow.classList.remove("pop-up");
+  popUpWindow.classList.add("modal");
+
+  const orderList = document.getElementById("cart");
+  cart.forEach((shopItem) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = shopItem;
+    orderList.appendChild(listItem);
+  });
+}
+
+function subscribeNewsletter(event) {
+  event.preventDefault();
+  alert("Thank you for subscribing!");
+  event.target.reset();
+}
+
+function submitFeedback(event) {
+  event.preventDefault();
+  alert("Thank you for your message");
+  event.target.reset();
+}
+
 // Automatically start when the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   showSlides();
+
+  const feedbackForm = document.getElementById("feedback");
+  if (feedbackForm) {
+    feedbackForm.addEventListener("submit", submitFeedback);
+  }
+
+  const subscribeForm = document.getElementById("subscribe");
+  if (subscribeForm) {
+    subscribeForm.addEventListener("submit", subscribeNewsletter);
+  }
+
+  const viewCartButton = document.getElementById("viewCart");
+  if (viewCartButton) {
+    viewCartButton.addEventListener("click", viewCart);
+  }
+
+  const closeButton = document.getElementById("close");
+  if (closeButton) {
+    closeButton.addEventListener("click", closeCart);
+  }
+
+  const addToCartButtons = document.getElementsByClassName(".cart-icon");
 });

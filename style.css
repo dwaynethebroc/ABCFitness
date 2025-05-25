@@ -1,7 +1,19 @@
 body, html {
-    height: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
 }
 
+* {
+  box-sizing: border-box;
+  border-color: white !important;
+  border-radius: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
 
 header {
   display: flex;
@@ -23,6 +35,7 @@ nav.header {
   justify-content: center;
   align-items: center;
 }
+
 nav.footer {
   font-size: 15px;
   display: flex;
@@ -31,7 +44,7 @@ nav.footer {
 }
 
 .mission {
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,13 +52,14 @@ nav.footer {
 }
 
 .testimony {
-  border: 2px solid #ccc;
-  background-color: #eee;
+  border: 2px solid white;
+  background-color: black;
   border-radius: 5px;
   padding: 16px;
   margin: 16px 0;
   font-style: italic;
   font-size: 30px;
+  color: white;
 }
 
 #brandLogo {
@@ -55,6 +69,8 @@ nav.footer {
   margin-right: auto;
   font-size: 30px;
   gap: 20px;
+  border: 2px solid white;
+  padding: 10px;
 }
 
 #logo {
@@ -80,22 +96,15 @@ nav.footer {
   align-items: center;
 }
 
-/* The hero image */
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/Client2_GroupYoga.png");
-
-  /* Set a specific height */
   height: 50vh;
-
-  /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-/* Place text in the middle of the image */
 .hero-text {
   text-align: center;
   position: absolute;
@@ -109,34 +118,32 @@ nav.footer {
 .shopPerks {
   display: flex;
   justify-content: center;
-  
 }
 
 .shopAction {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .perks {
   font-size: 20px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .schedule {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
-#goToShop{
+#goToShop {
   width: 100px;
 }
 
 .categories {
   display: flex;
   flex-direction: column;
-  align-items: space-between;
   justify-content: space-around;
   gap: 10px;
 }
@@ -146,12 +153,13 @@ nav.footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 10px;
+  padding: 20px;
+  margin: 20px;
   text-align: center;
 }
 
-.group div{
-  border: 1px solid black;
+.group div {
+  border: 1px solid white;
 }
 
 p.product-name {
@@ -167,7 +175,6 @@ p.product-description {
 .promo {
   width: 30%;
   height: 100px;
-  vertical-align: center;
   text-align: center;
   font-size: 20px;
 }
@@ -189,7 +196,7 @@ p.product-description {
   font-size: 20px;
 }
 
-.hours{
+.hours {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,16 +210,15 @@ p.product-description {
   gap: 20px;
   width: 200px;
   padding: 10px;
-
 }
 
-#feedback{
+#feedback {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid white;
   max-width: 50vw;
 }
 
@@ -225,6 +231,12 @@ p.product-description {
 
 img.socials {
   height: 50px;
+  background-color: white;
+  padding: 10px;
+}
+
+img#logo {
+  background-color: white;
 }
 
 #subscribe {
@@ -237,12 +249,60 @@ img.socials {
   padding: 10px;
   flex-direction: column;
 }
+
 #newsletter {
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
+.pop-up{
+  display: none;
+}
+
+.modal {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.747);
+    color: black;
+    font-size: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-title{
+  color: black;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+}
+
+#close {
+  cursor: pointer;
+  border: solid 1px rgba(0, 0, 0, 0.395);
+  padding: 5px;
+}
+
+.page {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+
 
 .event-block {
   display: flex;
@@ -258,23 +318,17 @@ img.socials {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px
+  padding: 10px;
 }
 
-
-* {box-sizing:border-box}
-
-/* Slideshow container */
 .slideshow-container {
   height: 300px;
 }
 
-/* Hide the images by default */
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -290,75 +344,43 @@ img.socials {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius:
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: black;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: relative;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: relative;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
+button, input[type="submit"], input[type="button"], input[type='reset'] {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 15px;
+  font-size: 16px;
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+  background-color: #222;
 }
 
-#feedback input {
-  width: 200px;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type='number'],
+textarea,
+select {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
 }
 
-#feedback label {
-  align-items: left;
-  justify-content: left;
+input::placeholder,
+textarea::placeholder {
+  color: #ccc;
 }
 
-.page {
-  display: none;
-}
-
-.active {
-  display: block;
-  text-align: center;
-}
-
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+footer > div {
+  border: 1px solid white;
 }
