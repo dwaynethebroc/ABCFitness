@@ -51,6 +51,29 @@ function addToCart(item) {
   );
 }
 
+function processOrder() {
+  const orderList = document.getElementById("cart");
+  if (cart.length > 0) {
+    orderList.textContent = "";
+    alert("Thank you for your Order!");
+  } else {
+    alert("Cart is empty!");
+  }
+}
+
+function clearCart() {
+  const orderList = document.getElementById("cart");
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+  } else {
+    orderList.textContent = "";
+    while (cart.length > 0) {
+      cart.pop();
+    }
+    alert("Your cart has been cleared!");
+  }
+}
+
 function closeCart() {
   const popUpWindow = document.getElementById("pop-up");
   popUpWindow.classList.add("pop-up");
@@ -63,6 +86,7 @@ function viewCart() {
   popUpWindow.classList.add("modal");
 
   const orderList = document.getElementById("cart");
+  orderList.textContent = "";
   cart.forEach((shopItem) => {
     const listItem = document.createElement("li");
     listItem.textContent = shopItem;
@@ -106,5 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
     closeButton.addEventListener("click", closeCart);
   }
 
-  const addToCartButtons = document.getElementsByClassName(".cart-icon");
+  const clearCartButton = document.getElementById("clearCart");
+  if (clearCartButton) {
+    clearCartButton.addEventListener("click", clearCart);
+  }
+
+  const processOrderButton = document.getElementById("process");
+  if (processOrderButton) {
+    processOrderButton.addEventListener("click", processOrder);
+  }
 });
