@@ -43,8 +43,11 @@ function showSection(section) {
 }
 
 function addToCart(item) {
-  cart.push(item);
-  console.log(cart);
+  let cartData = JSON.parse(sessionStorage.getItem("cart")) || [];
+  cartData.push(item);
+  console.log(cartData);
+
+  sessionStorage.setItem("cart", JSON.stringify(cartData));
 
   alert(
     `'${item}' has been added to your cart! View the cart at the top of the page to submit order`
@@ -53,9 +56,12 @@ function addToCart(item) {
 
 function processOrder() {
   const orderList = document.getElementById("cart");
-  if (cart.length > 0) {
+  const cartData = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  if (cartData.length > 0) {
     orderList.textContent = "";
-    alert("Thank you for your Order!");
+    sessionStorage.removeItem("cart");
+    alert("Thank you for your Order: \n" + cartData.join("\n"));
   } else {
     alert("Cart is empty!");
   }
@@ -63,13 +69,16 @@ function processOrder() {
 
 function clearCart() {
   const orderList = document.getElementById("cart");
-  if (cart.length === 0) {
+  const cartData = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+  if (cartData.length === 0) {
     alert("Your cart is empty!");
   } else {
     orderList.textContent = "";
     while (cart.length > 0) {
       cart.pop();
     }
+    sessionStorage.removeItem("cart");
     alert("Your cart has been cleared!");
   }
 }
@@ -81,13 +90,16 @@ function closeCart() {
 }
 
 function viewCart() {
+  const cartData = JSON.parse(sessionStorage.getItem("cart")) || [];
+
   const popUpWindow = document.getElementById("pop-up");
   popUpWindow.classList.remove("pop-up");
   popUpWindow.classList.add("modal");
 
   const orderList = document.getElementById("cart");
   orderList.textContent = "";
-  cart.forEach((shopItem) => {
+
+  cartData.forEach((shopItem) => {
     const listItem = document.createElement("li");
     listItem.textContent = shopItem;
     orderList.appendChild(listItem);
@@ -102,8 +114,38 @@ function subscribeNewsletter(event) {
 
 function submitFeedback(event) {
   event.preventDefault();
-  alert("Thank you for your message");
+  const fname = document.getElementById("fname").value.trim();
+  const lname = document.getElementById("lname").value.trim();
+  const order = document.getElementById("order").value.trim();
+  const experience = document.getElementById("experience").value.trim();
+  const email = document.getElementById("email").value.trim();
+  let checked = document.getElementById("cbox").value.trim();
+
+  if (checked === "on") {
+    checked = true;
+  } else {
+    checked = false;
+  }
+
+  console.log(checked);
+
+  const feedback = {
+    name: `${fname} ${lname}`,
+    email: email,
+    order: order,
+    experience: experience,
+    custom: checked,
+  };
+
+  let feedbackList = JSON.parse(localStorage.getItem("feedback")) || [];
+  feedbackList.push(feedback);
+  localStorage.setItem("feedback", JSON.stringify(feedbackList));
+
+  console.log(feedback);
+  console.log(feedbackList);
+
   event.target.reset();
+  alert(`Thank you for your message ${fname}`);
 }
 
 // Automatically start when the DOM is ready
